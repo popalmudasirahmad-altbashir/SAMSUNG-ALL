@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SAMSUNG ALL — M POPAL</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  -webkit-tap-highlight-color:transparent;
+}
+
+:root{
+  --pink:#ff2d9b;
+  --pink2:#ff72c8;
+  --blue:#27c9ff;
+  --cyan:#65f5ff;
+  --purple:#9b5cff;
+  --black:#03040a;
+  --white:#fff;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:
+    radial-gradient(circle at 15% 10%,rgba(0,210,255,.20),transparent 25%),
+    radial-gradient(circle at 85% 20%,rgba(255,30,160,.18),transparent 28%),
+    radial-gradient(circle at 50% 90%,rgba(140,70,255,.16),transparent 30%),
+    #03040a;
+  color:white;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* WATER COLOR BACKGROUND */
+body:before{
+  content:"";
+  position:fixed;
+  inset:-20%;
+  z-index:-2;
+  background:
+    radial-gradient(circle at 20% 30%,rgba(0,180,255,.16),transparent 22%),
+    radial-gradient(circle at 70% 20%,rgba(255,50,180,.13),transparent 25%),
+    radial-gradient(circle at 50% 70%,rgba(100,70,255,.13),transparent 27%);
+  filter:blur(45px);
+  animation:water 12s ease-in-out infinite alternate;
+}
+
+@keyframes water{
+  from{transform:translate(-2%,0) scale(1);}
+  to{transform:translate(2%,2%) scale(1.08);}
+}
+
+/* TOP */
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  padding:14px 12px 12px;
+  background:rgba(3,4,10,.72);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.topline{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.logo{
+  border:1px solid rgba(255,255,255,.65);
+  padding:11px 18px;
+  border-radius:18px;
+  background:
+    linear-gradient(135deg,
+    rgba(0,190,255,.20),
+    rgba(255,40,170,.22),
+    rgba(145,80,255,.20));
+  box-shadow:
+    0 0 20px rgba(255,40,170,.22),
+    inset 0 0 18px rgba(0,220,255,.12);
+  font-weight:900;
+  letter-spacing:2px;
+  white-space:nowrap;
+}
+
+.top-actions{
+  display:flex;
+  gap:8px;
+}
+
+.navbtn{
+  border:1px solid rgba(255,255,255,.38);
+  color:white;
+  background:
+    linear-gradient(135deg,
+    rgba(0,180,255,.23),
+    rgba(255,35,160,.18),
+    rgba(125,65,255,.22));
+  padding:10px 13px;
+  border-radius:15px;
+  font-weight:800;
+  cursor:pointer;
+  box-shadow:
+    inset 0 0 14px rgba(255,255,255,.05),
+    0 0 14px rgba(0,190,255,.10);
+  transition:.25s;
+}
+
+.navbtn:hover,
+.navbtn:active{
+  transform:translateY(-2px);
+  border-color:var(--pink2);
+  box-shadow:
+    0 0 22px rgba(255,45,155,.32),
+    inset 0 0 20px rgba(0,210,255,.16);
+}
+
+/* HERO */
+.hero{
+  padding:45px 18px 25px;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:clamp(38px,10vw,80px);
+  line-height:.95;
+  font-weight:1000;
+  letter-spacing:-3px;
+  background:linear-gradient(
+    90deg,
+    white,
+    #7cecff,
+    #ff62b8,
+    #bd8aff,
+    white
+  );
+  background-size:300%;
+  -webkit-background-clip:text;
+  color:transparent;
+  animation:titleflow 7s linear infinite;
+}
+
+@keyframes titleflow{
+  to{background-position:300%;}
+}
+
+.hero p{
+  max-width:700px;
+  margin:18px auto 0;
+  color:#cbd5e1;
+  line-height:1.7;
+}
+
+/* SEARCH */
+.searchbox{
+  max-width:720px;
+  margin:25px auto 10px;
+  position:relative;
+}
+
+.searchbox input{
+  width:100%;
+  padding:17px 20px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.35);
+  outline:none;
+  background:
+    linear-gradient(120deg,
+    rgba(0,200,255,.13),
+    rgba(255,40,170,.10),
+    rgba(130,70,255,.12));
+  color:white;
+  font-size:16px;
+  box-shadow:
+    inset 0 0 25px rgba(0,180,255,.06),
+    0 0 25px rgba(255,40,170,.07);
+}
+
+.searchbox input::placeholder{
+  color:#9da9ba;
+}
+
+/* SECTION */
+.section{
+  padding:22px 14px;
+  max-width:1300px;
+  margin:auto;
+}
+
+.section-title{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:16px;
+}
+
+.section-title h2{
+  font-size:25px;
+}
+
+.line{
+  flex:1;
+  height:1px;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    var(--pink),
+    var(--blue),
+    transparent
+  );
+}
+
+/* SERIES BUTTONS */
+.series-grid{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  padding:8px 2px 18px;
+  scrollbar-width:none;
+}
+
+.series-grid::-webkit-scrollbar{
+  display:none;
+}
+
+.series-btn{
+  min-width:130px;
+  height:68px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.40);
+  background:
+    linear-gradient(135deg,
+      rgba(0,190,255,.20),
+      rgba(15,120,200,.08),
+      rgba(255,40,170,.18));
+  color:white;
+  cursor:pointer;
+  font-size:16px;
+  font-weight:900;
+  box-shadow:
+    inset 0 0 20px rgba(0,220,255,.08),
+    0 0 18px rgba(255,30,160,.08);
+  transition:.28s;
+  position:relative;
+  overflow:hidden;
+}
+
+.series-btn:before{
+  content:"";
+  position:absolute;
+  width:100px;
+  height:100px;
+  background:rgba(0,220,255,.22);
+  filter:blur(25px);
+  border-radius:50%;
+  left:-30px;
+  top:-30px;
+}
+
+.series-btn span{
+  position:relative;
+  z-index:2;
+}
+
+.series-btn:hover,
+.series-btn.active{
+  transform:translateY(-4px);
+  border-color:#ff72c8;
+  box-shadow:
+    0 0 30px rgba(255,45,155,.28),
+    inset 0 0 25px rgba(0,200,255,.15);
+}
+
+/* MODEL GRID */
+.model-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:14px;
+}
+
+.model-card{
+  position:relative;
+  min-height:235px;
+  padding:18px;
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.18);
+  background:
+    linear-gradient(145deg,
+    rgba(255,255,255,.06),
+    rgba(0,170,255,.07),
+    rgba(255,30,160,.06));
+  box-shadow:
+    inset 0 0 30px rgba(0,200,255,.035),
+    0 10px 35px rgba(0,0,0,.35);
+  transition:.3s;
+  cursor:pointer;
+}
+
+.model-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(255,100,200,.65);
+  box-shadow:
+    0 0 28px rgba(255,35,160,.16),
+    inset 0 0 30px rgba(0,190,255,.08);
+}
+
+.year{
+  color:#7cecff;
+  font-size:13px;
+  font-weight:800;
+}
+
+.model-name{
+  margin-top:8px;
+  font-size:21px;
+  font-weight:950;
+}
+
+.model-mini{
+  color:#aeb9c9;
+  margin-top:9px;
+  font-size:13px;
+  line-height:1.5;
+}
+
+.no-image{
+  height:105px;
+  margin-bottom:13px;
+  border-radius:17px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:34px;
+  font-weight:1000;
+  color:rgba(255,255,255,.22);
+  border:1px dashed rgba(255,255,255,.15);
+  background:
+    radial-gradient(circle,
+    rgba(0,200,255,.15),
+    rgba(255,30,170,.07),
+    transparent);
+}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  background:rgba(0,0,0,.72);
+  backdrop-filter:blur(18px);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modal-box{
+  width:min(720px,100%);
+  max-height:90vh;
+  overflow:auto;
+  border-radius:28px;
+  border:1px solid rgba(255,255,255,.35);
+  padding:24px;
+  background:
+    linear-gradient(145deg,
+      rgba(5,12,20,.96),
+      rgba(16,5,18,.96));
+  box-shadow:
+    0 0 60px rgba(255,30,160,.18),
+    inset 0 0 30px rgba(0,200,255,.05);
+}
+
+.close{
+  float:right;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.35);
+  color:white;
+  background:rgba(255,255,255,.07);
+  font-size:20px;
+  cursor:pointer;
+}
+
+.modal-box h2{
+  font-size:32px;
+  margin-bottom:6px;
+}
+
+.modal-box .release{
+  color:#7cecff;
+  margin-bottom:20px;
+}
+
+.specs{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.spec{
+  padding:13px;
+  border-radius:15px;
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.09);
+}
+
+.spec b{
+  display:block;
+  color:#ff72c8;
+  margin-bottom:5px;
+  font-size:12px;
+}
+
+.spec span{
+  color:#dbe7f3;
+  font-size:14px;
+}
+
+/* MENU */
+.menu{
+  position:fixed;
+  inset:0;
+  z-index:3000;
+  pointer-events:none;
+}
+
+.menu-bg{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  opacity:0;
+  transition:.3s;
+}
+
+.menu-panel{
+  position:absolute;
+  right:-340px;
+  top:0;
+  width:min(330px,88vw);
+  height:100%;
+  padding:25px 20px;
+  background:
+    linear-gradient(150deg,
+      rgba(4,10,18,.98),
+      rgba(30,4,25,.98));
+  border-left:1px solid rgba(255,255,255,.20);
+  box-shadow:-20px 0 60px rgba(0,0,0,.5);
+  transition:.35s;
+}
+
+.menu.open{
+  pointer-events:auto;
+}
+
+.menu.open .menu-bg{
+  opacity:1;
+}
+
+.menu.open .menu-panel{
+  right:0;
+}
+
+.menu-title{
+  font-size:28px;
+  font-weight:1000;
+  margin-bottom:25px;
+}
+
+.menu-item{
+  width:100%;
+  padding:16px;
+  margin:8px 0;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.12);
+  background:
+    linear-gradient(100deg,
+      rgba(0,180,255,.11),
+      rgba(255,35,160,.09));
+  color:white;
+  text-align:left;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.menu-item:hover{
+  border-color:#ff65ba;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:50px 15px 30px;
+  color:#8995a5;
+  font-size:13px;
+}
+
+footer strong{
+  color:#ff72c8;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .top-actions .navbtn:nth-child(1){
+    display:none;
+  }
+
+  .logo{
+    padding:10px 13px;
+    font-size:13px;
+  }
+
+  .navbtn{
+    padding:9px 11px;
+  }
+
+  .hero{
+    padding-top:35px;
+  }
+
+  .hero h1{
+    font-size:46px;
+  }
+
+  .model-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
+
+  .model-card{
+    min-height:220px;
+    padding:13px;
+  }
+
+  .model-name{
+    font-size:17px;
+  }
+
+  .specs{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="topline">
+
+    <button class="logo" onclick="home()">
+      M POPAL
+    </button>
+
+    <div class="top-actions">
+      <button class="navbtn" onclick="focusSearch()">SEARCH</button>
+      <button class="navbtn" onclick="openMenu()">☰ MENU</button>
+    </div>
+
+  </div>
+</header>
+
+
+<main>
+
+<section class="hero">
+
+  <h1>SAMSUNG ALL</h1>
+
+  <p>
+    The Galaxy universe — series, generations, models,
+    history and specifications in one futuristic place.
+  </p>
+
+  <div class="searchbox">
+    <input
+      id="search"
+      type="text"
+      placeholder="Search Galaxy model... e.g. S26 Ultra"
+      oninput="searchModels()"
+    >
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="section-title">
+    <h2>GALAXY SERIES</h2>
+    <div class="line"></div>
+  </div>
+
+  <div class="series-grid" id="seriesButtons"></div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="section-title">
+    <h2 id="currentTitle">LATEST GALAXY</h2>
+    <div class="line"></div>
+  </div>
+
+  <div class="model-grid" id="models"></div>
+
+</section>
+
+</main>
+
+
+<footer>
+  <strong>M POPAL</strong> × SAMSUNG ALL<br><br>
+  Galaxy archive • Built for GitHub Pages
+</footer>
+
+
+<!-- MODEL MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+
+    <button class="close" onclick="closeModal()">×</button>
+
+    <h2 id="modalName"></h2>
+    <div class="release" id="modalRelease"></div>
+
+    <div class="specs" id="modalSpecs"></div>
+
+  </div>
+</div>
+
+
+<!-- MENU -->
+<div class="menu" id="menu">
+
+  <div class="menu-bg" onclick="closeMenu()"></div>
+
+  <div class="menu-panel">
+
+    <div class="menu-title">GALAXY MENU</div>
+
+    <button class="menu-item" onclick="home()">⌂ HOME</button>
+    <button class="menu-item" onclick="showAll()">📱 ALL MODELS</button>
+    <button class="menu-item" onclick="showPopular()">🔥 POPULAR MODELS</button>
+    <button class="menu-item" onclick="showLatest()">✨ LATEST MODELS</button>
+    <button class="menu-item" onclick="showTimeline()">📅 GALAXY TIMELINE</button>
+    <button class="menu-item" onclick="focusSearch()">🔍 SEARCH</button>
+    <button class="menu-item" onclick="showBest()">⭐ FEATURED MODELS</button>
+    <button class="menu-item" onclick="alert('Settings will be added in the next design stage.')">⚙ SETTINGS</button>
+    <button class="menu-item" onclick="closeMenu()">← CLOSE</button>
+
+  </div>
+</div>
+
+
+<script>
+
+/* =========================================================
+   SAMSUNG ALL — DATA
+   Images are intentionally EMPTY for Stage 1.
+   Stage 2 will connect images by filename.
+========================================================= */
+
+const DB = {
+
+"S": [
+
+/* 2026 */
+["Galaxy S26 Ultra",2026,"6.9-inch Dynamic AMOLED 2X","200MP main camera","5000mAh","Ultra flagship"],
+["Galaxy S26+",2026,"6.7-inch Dynamic AMOLED 2X","50MP main camera","4900mAh","Flagship"],
+["Galaxy S26",2026,"6.3-inch Dynamic AMOLED 2X","50MP main camera","4300mAh","Flagship"],
+
+/* 2025 */
+["Galaxy S25 Ultra",2025,"6.9-inch Dynamic AMOLED 2X","200MP main camera","5000mAh","Ultra flagship"],
+["Galaxy S25 Edge",2025,"6.7-inch Dynamic AMOLED 2X","200MP main camera","3900mAh","Slim flagship"],
+["Galaxy S25+",2025,"6.7-inch Dynamic AMOLED 2X","50MP main camera","4900mAh","Flagship"],
+["Galaxy S25",2025,"6.2-inch Dynamic AMOLED 2X","50MP main camera","4000mAh","Flagship"],
+["Galaxy S25 FE",2025,"6.7-inch Dynamic AMOLED 2X","50MP main camera","4900mAh","Fan Edition"],
+
+/* 2024 */
+["Galaxy S24 Ultra",2024,"6.8-inch Dynamic AMOLED 2X","200MP main camera","5000mAh","Ultra flagship"],
+["Galaxy S24+",2024,"6.7-inch Dynamic AMOLED 2X","50MP main camera","4900mAh","Flagship"],
+["Galaxy S24",2024,"6.2-inch Dynamic AMOLED 2X","50MP main camera","4000mAh","Flagship"],
+["Galaxy S24 FE",2024,"6.7-inch Dynamic AMOLED 2X","50MP main camera","4700mAh","Fan Edition"],
+
+/* 2023 */
+["Galaxy S23 Ultra",2023,"6.8-inch Dynamic AMOLED 2X","200MP main camera","5000mAh","Ultra flagship"],
+["Galaxy S23+",2023,"6.6-inch Dynamic AMOLED 2X","50MP main camera","4700mAh","Flagship"],
+["Galaxy S23",2023,"6.1-inch Dynamic AMOLED 2X","50MP main camera","3900mAh","Flagship"],
+["Galaxy S23 FE",2023,"6.4-inch Dynamic AMOLED 2X","50MP main camera","4500mAh","Fan Edition"],
+
+/* 2022 */
+["Galaxy S22 Ultra",2022,"6.8-inch Dynamic AMOLED 2X","108MP main camera","5000mAh","Ultra flagship"],
+["Galaxy S22+",2022,"6.6-inch Dynamic AMOLED 2X","50MP main camera","4500mAh","Flagship"],
+["Galaxy S22",2022,"6.1-inch Dynamic AMOLED 2X","50MP main camera","3700mAh","Flagship"],
+["Galaxy S21 FE",2022,"6.4-inch Dynamic AMOLED 2X","12MP main camera","4500mAh","Fan Edition"],
+
+/* 2021 */
+["Galaxy S21 Ultra",2021,"6.8-inch Dynamic AMOLED 2X","108MP main camera","5000mAh","Ultra flagship"],
+["Galaxy S21+",2021,"6.7-inch Dynamic AMOLED 2X","12MP main camera","4800mAh","Flagship"],
+["Galaxy S21",2021,"6.2-inch Dynamic AMOLED 2X","12MP main camera","4000mAh","Flagship"],
+["Galaxy S21 FE",2021,"6.4-inch Dynamic AMOLED 2X","12MP main camera","4500mAh","Fan Edition"],
+
+/* 2020 */
+["Galaxy S20 Ultra",2020,"6.9-inch Dynamic AMOLED 2X","108MP main camera","5000mAh","Ultra flagship"],
+["Galaxy S20+",2020,"6.7-inch Dynamic AMOLED 2X","12MP main camera","4500mAh","Flagship"],
+["Galaxy S20",2020,"6.2-inch Dynamic AMOLED 2X","12MP main camera","4000mAh","Flagship"],
+["Galaxy S20 FE",2020,"6.5-inch Super AMOLED","12MP main camera","4500mAh","Fan Edition"],
+
+/* older information — no Stage 2 image */
+["Galaxy S10",2019,"6.1-inch Dynamic AMOLED","12MP main camera","3400mAh","Flagship"],
+["Galaxy S10+",2019,"6.4-inch Dynamic AMOLED","12MP main camera","4100mAh","Flagship"],
+["Galaxy S10e",2019,"5.8-inch Dynamic AMOLED","12MP main camera","3100mAh","Compact flagship"],
+["Galaxy S9+",2018,"6.2-inch Super AMOLED","12MP main camera","3500mAh","Flagship"],
+["Galaxy S9",2018,"5.8-inch Super AMOLED","12MP main camera","3000mAh","Flagship"],
+["Galaxy S8+",2017,"6.2-inch Super AMOLED","12MP main camera","3500mAh","Flagship"],
+["Galaxy S8",2017,"5.8-inch Super AMOLED","12MP main camera","3000mAh","Flagship"],
+["Galaxy S7 edge",2016,"5.5-inch Super AMOLED","12MP main camera","3600mAh","Flagship"],
+["Galaxy S7",2016,"5.1-inch Super AMOLED","12MP main camera","3000mAh","Flagship"],
+["Galaxy S6 edge+",2015,"5.7-inch Super AMOLED","16MP main camera","3000mAh","Flagship"],
+["Galaxy S6 edge",2015,"5.1-inch Super AMOLED","16MP main camera","2600mAh","Flagship"],
+["Galaxy S6",2015,"5.1-inch Super AMOLED","16MP main camera","2550mAh","Flagship"],
+["Galaxy S5",2014,"5.1-inch Super AMOLED","16MP main camera","2800mAh","Flagship"],
+["Galaxy S4",2013,"5-inch Super AMOLED","13MP main camera","2600mAh","Flagship"],
+["Galaxy S3",2012,"4.8-inch Super AMOLED","8MP main camera","2100mAh","Flagship"],
+["Galaxy S2",2011,"4.3-inch Super AMOLED Plus","8MP main camera","1650mAh","Flagship"],
+["Galaxy S",2010,"4-inch Super AMOLED","5MP main camera","1500mAh","Original Galaxy S"]
+
+],
+
+
+"A":[
+
+/* 2026 */
+["Galaxy A57 5G",2026,"6.7-inch Super AMOLED Plus","50MP + 12MP + 5MP","5000mAh","Current A Series"],
+["Galaxy A37 5G",2026,"6.7-inch Super AMOLED","50MP + 8MP + 5MP","5000mAh","Current A Series"],
+["Galaxy A27 5G",2026,"6.7-inch Super AMOLED","50MP + 5MP + 2MP","5000mAh","Current A Series"],
+["Galaxy A17 5G",2026,"6.7-inch Super AMOLED","50MP + 5MP + 2MP","5000mAh","Current A Series"],
+
+/* 2025 */
+["Galaxy A56 5G",2025,"6.7-inch Super AMOLED","50MP main camera","5000mAh","A Series"],
+["Galaxy A36 5G",2025,"6.7-inch Super AMOLED","50MP main camera","5000mAh","A Series"],
+["Galaxy A26 5G",2025,"6.7-inch Super AMOLED","50MP main camera","5000mAh","A Series"],
+["Galaxy A16 5G",2025,"6.7-inch Super AMOLED","50MP main camera","5000mAh","A Series"],
+
+/* 2024 */
+["Galaxy A55 5G",2024,"6.6-inch Super AMOLED","50MP main camera","5000mAh","A Series"],
+["Galaxy A35 5G",2024,"6.6-inch Super AMOLED","50MP main camera","5000mAh","A Series"],
+["Galaxy A25 5G",2024,"6.5-inch Super AMOLED","50MP main camera","5000mAh","A Series"],
+["Galaxy A16 5G",2024,"6.7-inch Super AMOLED","50MP main camera","5000mAh","A Series"],
+["Galaxy A15 5G",2024,"6.5-inch Super AMOLED","50MP main camera","5000mAh","A Series"]
+],
+
+
+"Z Fold":[
+["Galaxy Z Fold8 Ultra",2026,"Large foldable AMOLED","200MP main camera","5000mAh","Latest Fold"],
+["Galaxy Z Fold8",2026,"Foldable Dynamic AMOLED","50MP main camera","5000mAh","Latest Fold"],
+["Galaxy Z Fold7",2025,"Foldable Dynamic AMOLED","200MP main camera","4400mAh","Foldable flagship"],
+["Galaxy Z Fold6",2024,"Foldable Dynamic AMOLED","50MP main camera","4400mAh","Foldable flagship"],
+["Galaxy Z Fold5",2023,"Foldable Dynamic AMOLED","50MP main camera","4400mAh","Foldable flagship"]
+],
+
+
+"Note":[
+["Galaxy Note20 Ultra",2020,"6.9-inch Dynamic AMOLED 2X","108MP main camera","4500mAh","S Pen flagship"],
+["Galaxy Note20",2020,"6.7-inch Super AMOLED Plus","64MP main camera","4300mAh","S Pen flagship"],
+["Galaxy Note10+",2019,"6.8-inch Dynamic AMOLED","12MP main camera","4300mAh","S Pen flagship"],
+["Galaxy Note10",2019,"6.3-inch Dynamic AMOLED","12MP main camera","3500mAh","S Pen flagship"]
+],
+
+
+/* Current/active additional families */
+"Z Flip":[
+["Galaxy Z Flip8",2026,"Foldable Dynamic AMOLED","50MP main camera","4300mAh","Current Flip"],
+["Galaxy Z Flip7",2025,"Foldable AMOLED","50MP main camera","4300mAh","Foldable"],
+["Galaxy Z Flip6",2024,"Foldable AMOLED","50MP main camera","4000mAh","Foldable"],
+["Galaxy Z Flip5",2023,"Foldable AMOLED","12MP main camera","3700mAh","Foldable"]
+],
+
+
+/* Information-focused series */
+"M":[
+["Galaxy M66 5G",2025,"Super AMOLED","50MP main camera","Large battery","M Series information"],
+["Galaxy M55 5G",2024,"Super AMOLED Plus","50MP main camera","5000mAh","M Series"],
+["Galaxy M35 5G",2024,"Super AMOLED","50MP main camera","6000mAh","M Series"]
+],
+
+"F":[
+["Galaxy F56 5G",2025,"Super AMOLED Plus","50MP main camera","5000mAh","F Series"],
+["Galaxy F55 5G",2024,"Super AMOLED Plus","50MP main camera","5000mAh","F Series"]
+],
+
+"XCover":[
+["Galaxy XCover7 Pro",2025,"6.6-inch rugged display","50MP main camera","4350mAh","Rugged Galaxy"]
+],
+
+"C":[
+["Galaxy C8",2017,"5.5-inch Super AMOLED","16MP main camera","3000mAh","Legacy C Series"]
+],
+
+"J":[
+["Galaxy J8",2018,"6-inch Super AMOLED","16MP main camera","3500mAh","Legacy J Series"]
+],
+
+"E":[
+["Galaxy E7",2015,"5.5-inch Super AMOLED","13MP main camera","2950mAh","Legacy E Series"]
+],
+
+"On":[
+["Galaxy On Max",2017,"5.7-inch display","13MP main camera","3300mAh","Legacy On Series"]
+]
+
+};
+
+
+/* =========================================================
+   SERIES ORDER
+========================================================= */
+
+const SERIES = [
+  ["S","GALAXY S"],
+  ["Z Fold","GALAXY Z FOLD"],
+  ["Z Flip","GALAXY Z FLIP"],
+  ["A","GALAXY A"],
+  ["M","GALAXY M"],
+  ["F","GALAXY F"],
+  ["Note","GALAXY NOTE"],
+  ["XCover","GALAXY XCOVER"],
+  ["C","GALAXY C"],
+  ["J","GALAXY J"],
+  ["E","GALAXY E"],
+  ["On","GALAXY ON"]
+];
+
+
+/* =========================================================
+   RENDER SERIES BUTTONS
+========================================================= */
+
+const seriesButtons=document.getElementById("seriesButtons");
+
+SERIES.forEach((s,index)=>{
+  const btn=document.createElement("button");
+  btn.className="series-btn";
+  if(index===0) btn.classList.add("active");
+
+  btn.innerHTML=`<span>${s[1]}</span>`;
+
+  btn.onclick=()=>{
+    document.querySelectorAll(".series-btn")
+      .forEach(x=>x.classList.remove("active"));
+
+    btn.classList.add("active");
+    showSeries(s[0]);
+  };
+
+  seriesButtons.appendChild(btn);
+});
+
+
+/* =========================================================
+   MODEL RENDER
+========================================================= */
+
+function renderModels(list,title){
+
+  document.getElementById("currentTitle").textContent=title;
+
+  const box=document.getElementById("models");
+  box.innerHTML="";
+
+  if(!list.length){
+    box.innerHTML=`
+      <div class="model-card">
+        <div class="no-image">?</div>
+        <div class="model-name">No model found</div>
+        <div class="model-mini">
+          Try another Galaxy model name.
+        </div>
+      </div>`;
+    return;
+  }
+
+  list.forEach((m,index)=>{
+
+    const card=document.createElement("div");
+    card.className="model-card";
+
+    /*
+      STAGE 2:
+      Here we will replace no-image with:
+      <img src="images/s/Galaxy-S26-Ultra.jpg">
+    */
+
+    card.innerHTML=`
+      <div class="no-image">
+        ${getInitials(m[0])}
+      </div>
+
+      <div class="year">${m[1]}</div>
+
+      <div class="model-name">
+        ${m[0]}
+      </div>
+
+      <div class="model-mini">
+        ${m[6] || m[5] || "Galaxy model"}
+      </div>
+    `;
+
+    card.onclick=()=>openModel(m);
+
+    box.appendChild(card);
+  });
+}
+
+
+function getInitials(name){
+  return name
+    .replace("Galaxy ","")
+    .split(" ")
+    .slice(0,2)
+    .map(x=>x[0])
+    .join("")
+    .toUpperCase();
+}
+
+
+/* =========================================================
+   OPEN MODEL
+========================================================= */
+
+function openModel(m){
+
+  document.getElementById("modalName").textContent=m[0];
+
+  document.getElementById("modalRelease").textContent=
+    "Released / generation: "+m[1];
+
+  document.getElementById("modalSpecs").innerHTML=`
+
+    <div class="spec">
+      <b>DISPLAY</b>
+      <span>${m[2]}</span>
+    </div>
+
+    <div class="spec">
+      <b>CAMERA</b>
+      <span>${m[3]}</span>
+    </div>
+
+    <div class="spec">
+      <b>BATTERY</b>
+      <span>${m[4]}</span>
+    </div>
+
+    <div class="spec">
+      <b>TYPE</b>
+      <span>${m[5]}</span>
+    </div>
+
+    <div class="spec">
+      <b>SAMSUNG FAMILY</b>
+      <span>Galaxy ${getFamily(m[0])}</span>
+    </div>
+
+    <div class="spec">
+      <b>PHOTO</b>
+      <span>Stage 2 — image will be added</span>
+    </div>
+
+  `;
+
+  document.getElementById("modal").classList.add("show");
+}
+
+
+function getFamily(name){
+
+  if(name.includes("S")) return "S";
+  if(name.includes("Fold")) return "Z Fold";
+  if(name.includes("Flip")) return "Z Flip";
+  if(name.includes("Note")) return "Note";
+  if(name.includes("A")) return "A";
+  if(name.includes("M")) return "M";
+  if(name.includes("F")) return "F";
+  if(name.includes("XCover")) return "XCover";
+  return "Galaxy";
+}
+
+
+function closeModal(){
+  document.getElementById("modal").classList.remove("show");
+}
+
+
+/* =========================================================
+   SERIES
+========================================================= */
+
+function showSeries(key){
+
+  const name=
+    SERIES.find(x=>x[0]===key)?.[1] || key;
+
+  renderModels(
+    DB[key] || [],
+    name
+  );
+
+  window.scrollTo({
+    top:document.querySelector(".section").offsetTop-70,
+    behavior:"smooth"
+  });
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+function searchModels(){
+
+  const q=document
+    .getElementById("search")
+    .value
+    .toLowerCase()
+    .trim();
+
+  if(!q){
+    showSeries("S");
+    return;
+  }
+
+  let result=[];
+
+  Object.values(DB).forEach(list=>{
+    list.forEach(m=>{
+      if(m[0].toLowerCase().includes(q)){
+        result.push(m);
+      }
+    });
+  });
+
+  renderModels(result,"SEARCH RESULTS");
+}
+
+
+function focusSearch(){
+
+  closeMenu();
+
+  const input=document.getElementById("search");
+
+  input.focus();
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+}
+
+
+/* =========================================================
+   HOME / MENU FUNCTIONS
+========================================================= */
+
+function home(){
+
+  closeMenu();
+
+  document.getElementById("search").value="";
+
+  showSeries("S");
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+}
+
+
+function showAll(){
+
+  closeMenu();
+
+  let all=[];
+
+  Object.values(DB).forEach(list=>{
+    all.push(...list);
+  });
+
+  renderModels(all,"ALL GALAXY MODELS");
+}
+
+
+function showLatest(){
+
+  closeMenu();
+
+  let latest=[];
+
+  Object.values(DB).forEach(list=>{
+    if(list.length) latest.push(list[0]);
+  });
+
+  renderModels(latest,"LATEST GALAXY MODELS");
+}
+
+
+function showPopular(){
+
+  closeMenu();
+
+  const popular=[
+    ...DB["S"].slice(0,8),
+    ...DB["Z Fold"].slice(0,2),
+    ...DB["A"].slice(0,3)
+  ];
+
+  renderModels(popular,"POPULAR GALAXY MODELS");
+}
+
+
+function showBest(){
+
+  closeMenu();
+
+  const featured=[
+    DB["S"][0],
+    DB["S"][1],
+    DB["S"][4],
+    DB["S"][8],
+    DB["Z Fold"][0],
+    DB["Z Fold"][2],
+    DB["A"][0],
+    DB["A"][4]
+  ];
+
+  renderModels(featured,"FEATURED GALAXY MODELS");
+}
+
+
+function showTimeline(){
+
+  closeMenu();
+
+  let all=[];
+
+  Object.values(DB).forEach(list=>{
+    all.push(...list);
+  });
+
+  all.sort((a,b)=>b[1]-a[1]);
+
+  renderModels(all,"GALAXY TIMELINE");
+}
+
+
+function openMenu(){
+  document.getElementById("menu").classList.add("open");
+}
+
+function closeMenu(){
+  document.getElementById("menu").classList.remove("open");
+}
+
+
+/* =========================================================
+   INITIAL PAGE
+========================================================= */
+
+showSeries("S");
+
+
+/* CLOSE MODAL WHEN CLICKING OUTSIDE */
+document.getElementById("modal").addEventListener("click",function(e){
+  if(e.target===this) closeModal();
+});
+
+</script>
+
+</body>
+</html>
